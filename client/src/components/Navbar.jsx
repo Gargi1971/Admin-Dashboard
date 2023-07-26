@@ -26,6 +26,7 @@ const Navbar = () => {
     }}
   >
     <Toolbar sx = {{justifyContent: "space-between"}}>
+        {/*Left Side */}
         <FlexBetween>
             <IconButton onClick={() => console.log('open/close sidebar')}>
                 <MenuIcon/>
@@ -42,7 +43,20 @@ const Navbar = () => {
                 </IconButton>
             </FlexBetween>
         </FlexBetween>
-        {/* Left Side*/}
+
+        {/* Right Side*/}
+        <FlexBetween gap = "1.5rem">
+            <IconButton onClick={() => dispatch(setMode())}>
+                {theme.palette.mode === 'dark' ? (
+                    <DarkModeOutlined sx = {{ fontSize: "25px"}}/>
+                ) : (
+                    <LightModeOutlined sx = {{ fontSize: "25px"}}/>
+                )}
+            </IconButton>
+            <IconButton>
+                <SettingsOutlined sx = {{ fontSize: "25px"}}/>
+            </IconButton>
+        </FlexBetween>
     </Toolbar>
   </AppBar>;
 }
